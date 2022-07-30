@@ -7,40 +7,37 @@ public class ProductManager {
         this.repo = repo;
     }
 
-    public void add(Products product){
+    public void add(Products product) {
         repo.saveProduct(product);
     }
 
-    public Products[] getProducts(){
+    public Products[] getProducts() {
         return repo.getProduct();
     }
 
     //возвращает массив найденных товаров
-    private Products[] result = new Products[0]; // тут будем хранить подошедшие запросу продукты
+    private Products[] result = new Products[0];
 
     public Products[] searchBy(String text) {
 
         //int index = 0;
-        for (Products product: repo.getProduct()) {
+        for (Products product : repo.getProduct()) {
             if (matches(product, text)) {
                 Products[] tmp = new Products[result.length + 1];
-                for (int i = 0; i< result.length; i++){
+                for (int i = 0; i < result.length; i++) {
                     //tmp[i] = result[i];
                     tmp[i] = result[result.length - 1 - i];
                 }
-                tmp[tmp.length-1] = product;
+                tmp[tmp.length - 1] = product;
                 result = tmp;
             }
         }
         return result;
     }
 
-
-
-
-    public Products[] reverseResult(){
+    public Products[] reverseResult() {
         Products[] reverse = new Products[result.length];
-        for (int i=0; i < reverse.length; i++){
+        for (int i = 0; i < reverse.length; i++) {
             reverse[i] = result[result.length - 1 - i];
         }
         return reverse;

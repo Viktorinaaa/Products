@@ -61,5 +61,63 @@ class ProductRepositoryTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    void getAuthor() {
+        Book book = new Book(5, 100, "Name 1", "Author 1");
+
+        String actual = book.getAuthor();
+        String expected = "Author 1";
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void getManufacturer() {
+        Smartphone smartphone = new Smartphone(2, 100, "Name 1", "Manufacturer 1");
+
+        String actual = smartphone.getManufacturer();
+        String expected = "Manufacturer 1";
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void setManufacturerTest() {
+        Smartphone smartphone = new Smartphone(1, 100, "iPhone", "Manufacturer");
+        String man = smartphone.getManufacturer();
+        smartphone.setManufacturer(man);
+        assertEquals(smartphone.getManufacturer(), man);
+    }
+
+    @Test
+    void setAuthorTest() {
+        Book book = new Book(1, 100, "Book", "Author");
+        String author = book.getAuthor();
+        book.setAuthor(author);
+        assertEquals(book.getAuthor(), author);
+    }
+
+    @Test
+    void setPriceTest() {
+        Products product = new Products(1, 100, "Product1");
+        int price = product.price;
+        product.setPrice();
+        assertEquals(product.getPrice(), price);
+    }
+
+    @Test
+    void setIdTest() {
+        Products product = new Products(1, 100, "Product1");
+        int id = product.id;
+        product.setId(id);
+        assertEquals(product.getId(), id);
+    }
+
+    @Test
+    void setNameTest() {
+        Products product = new Products(1, 100, "Product1");
+        String name = product.name;
+        product.setName(name);
+        assertEquals(product.getName(), name);
+    }
+
 
 }

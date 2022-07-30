@@ -23,7 +23,7 @@ public class Products {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice() {
         this.price = price;
     }
 
