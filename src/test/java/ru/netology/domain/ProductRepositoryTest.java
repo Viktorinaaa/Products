@@ -20,14 +20,14 @@ class ProductRepositoryTest {
         repo.saveProduct(product1);
         repo.saveProduct(product2);
 
-        Products [] expected = {product3,product1,product2};
-        Products [] actual = repo.getProduct();
+        Products[] expected = {product3, product1, product2};
+        Products[] actual = repo.getProduct();
 
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void deleteProduct1(){
+    void deleteProduct1() {
         ProductRepository repo = new ProductRepository();
 
         repo.saveProduct(product3);
@@ -37,7 +37,7 @@ class ProductRepositoryTest {
         repo.getProduct();
         repo.deleteProduct(2);
 
-        Products[] expected = {product3,product2};
+        Products[] expected = {product3, product2};
         Products[] actual = repo.getProduct();
 
         assertArrayEquals(expected, actual);
@@ -45,7 +45,7 @@ class ProductRepositoryTest {
 
 
     @Test
-    void deleteProduct2(){
+    void deleteProduct2() {
         ProductRepository repo = new ProductRepository();
 
         repo.saveProduct(product3);
@@ -55,7 +55,7 @@ class ProductRepositoryTest {
         repo.getProduct();
         repo.deleteProduct(1);
 
-        Products[] expected = {product1,product2};
+        Products[] expected = {product1, product2};
         Products[] actual = repo.getProduct();
 
         assertArrayEquals(expected, actual);

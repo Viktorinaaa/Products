@@ -42,12 +42,11 @@ class ProductManagerTest {
     void searchBy() {
         manager.searchBy("Книга 2");
 
-        Products[] expected = {product4,product1};
+        Products[] expected = {product4, product1};
         Products[] actual = manager.reverseResult();
         //Products[] actual = manager.searchBy("Книга 2");
         assertArrayEquals(expected, actual);
     }
-
 
 
     @Test

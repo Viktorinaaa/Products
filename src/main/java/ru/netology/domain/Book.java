@@ -1,6 +1,6 @@
 package ru.netology.domain;
 
-public class Book extends Products{
+public class Book extends Products {
     private String author;
 
     public Book(int id, int price, String name, String author) {
@@ -15,9 +15,6 @@ public class Book extends Products{
     public void setAuthor(String author) {
         this.author = author;
     }
-
-
-
 
 
 }
