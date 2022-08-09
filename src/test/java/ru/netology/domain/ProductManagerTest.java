@@ -37,7 +37,6 @@ class ProductManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-
     @Test
     void searchBy() {
         Products[] expected = {product1, product4};
@@ -54,7 +53,6 @@ class ProductManagerTest {
         Products[] actual = manager.reverseResult();
         assertArrayEquals(expected, actual);
     }
-
 
 
     @Test
