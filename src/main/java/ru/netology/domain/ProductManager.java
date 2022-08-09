@@ -2,6 +2,7 @@ package ru.netology.domain;
 
 public class ProductManager {
     private ProductRepository repo;
+    private Products[] result = new Products[0]; //возвращает массив найденных товаров
 
     public ProductManager(ProductRepository repo) {
         this.repo = repo;
@@ -15,17 +16,11 @@ public class ProductManager {
         return repo.getProduct();
     }
 
-    //возвращает массив найденных товаров
-    private Products[] result = new Products[0];
-
     public Products[] searchBy(String text) {
-
-        //int index = 0;
         for (Products product : repo.getProduct()) {
             if (matches(product, text)) {
                 Products[] tmp = new Products[result.length + 1];
                 for (int i = 0; i < result.length; i++) {
-                    //tmp[i] = result[i];
                     tmp[i] = result[result.length - 1 - i];
                 }
                 tmp[tmp.length - 1] = product;
@@ -50,6 +45,5 @@ public class ProductManager {
         } else {
             return false;
         }
-
     }
 }
