@@ -44,12 +44,30 @@ class ProductManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-    //Поиск
+    //Поик
     @Test
-    void searchByReverse() {
+    void searchByReverseProducts() {
         manager.searchBy("Книга 2");
 
         Products[] expected = {product4, product1};
+        Products[] actual = manager.reverseResult();
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void searchByReverseProduct() {
+        manager.searchBy("Книга 1");
+
+        Products[] expected = {product3};
+        Products[] actual = manager.reverseResult();
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void searchByReverseNullProducts() {
+        manager.searchBy("Книга 4");
+
+        Products[] expected = {};
         Products[] actual = manager.reverseResult();
         assertArrayEquals(expected, actual);
     }
